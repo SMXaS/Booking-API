@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-from secrets import MY_SECRET_KEY
+from dirty_secrets import MY_SECRET_KEY
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,17 +28,37 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Django rest framework
+    'rest_framework',
+    # Allows the FrontEnd to get data
+    'corsheaders',
+    # My applications
+    'booking_app.apps.BookingAppConfig',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # Middlware corsheaders
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Ports
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://localhost:8000',
+)
 
 ROOT_URLCONF = 'booking_system.urls'
 

@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+
+from .models import Room
+from .serializers import BookingsSerializer
+
+
+class ListAllBookings(generics.ListAPIView):
+    queryset = Room.objects.all()
+    serializer_class = BookingsSerializer
+
+class DetailBooking(generics.RetrieveAPIView):
+    queryset = Room.objects.all()
+    serializer_class = BookingsSerializer
