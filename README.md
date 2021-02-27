@@ -1,5 +1,7 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-[![MIT License][license-badge]](LICENSE.md)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # RESTFUL-DJANGO-PYTHON-ROOM-BOOKING-SYSTEM
  * RESTFUL DJANGO BACKEND API FOR ROOM BOOKING SYSTEM
 
