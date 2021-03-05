@@ -1,3 +1,4 @@
+"""
+Testing file used to test the views [CRUD]
+"""
 from django.test import TestCase
-
-# Create your tests here.
