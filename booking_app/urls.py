@@ -1,11 +1,7 @@
 """
 This file contains routes or entry-point for API endpoints
 """
-
-# Importing the path function for getting routes navigation
 from django.urls import path
-
-# From views file importing classes
 from .views import ListAllBookings, DetailBooking
 
 urlpatterns = [

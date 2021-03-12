@@ -2,31 +2,14 @@
 This is the main file of the API
 The file contains [Get, Post, Update, Delete] API Requests
 """
-# Allows to get common usage patterns
 from rest_framework import generics
-
-# Importing status server codes
 from rest_framework import status
-
-# Importing API view decorators
 from rest_framework.decorators import api_view
-
-# Importing response from the API
 from rest_framework.response import Response
-
-# Importing API view
 from rest_framework.views import APIView
-
-# Importing models file
 from . import models
-
-# Importing serializers file
 from . import serializers
-
-# Importing room database model
 from .models import Room
-
-# Importing bookings serializer class
 from .serializers import BookingsSerializer
 
 # Displays all the Bookings /api
@@ -74,4 +57,10 @@ class DetailBooking(APIView):
         article = models.Room.objects.get(id=pk)
         article.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+        # TODO Why ROOM model only? What about reservations model? 
+        # TODO Create Employees
+        # TODO Think about ID of User that registering
+        # TODO Think about Room numbers [1,9] available now, 10 ... 11 will cause trouble
+        # TODO Tests
         
